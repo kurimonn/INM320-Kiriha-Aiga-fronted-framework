@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard Kit - Overview</title>
+  
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <div class="sidebar-brand">
+      <i class="bi bi-pie-chart-fill"></i>
+      <span>Dashboard Kit</span>
+    </div>
+    
+    <nav class="sidebar-nav">
+      <a href="#" class="nav-item active">
+        <i class="bi bi-pie-chart"></i>
+        <span>Overview</span>
+      </a>
+      <a href="#" class="nav-item">
+        <i class="bi bi-ticket-perforated"></i>
+        <span>Tickets</span>
+      </a>
+      <a href="#" class="nav-item">
+        <i class="bi bi-lightbulb"></i>
+        <span>Ideas</span>
+      </a>
+      <a href="#" class="nav-item">
+        <i class="bi bi-people"></i>
+        <span>Contacts</span>
+      </a>
+      <a href="#" class="nav-item">
+        <i class="bi bi-person-badge"></i>
+        <span>Agents</span>
+      </a>
+      <a href="#" class="nav-item">
+        <i class="bi bi-file-text"></i>
+        <span>Articles</span>
+      </a>
+    </nav>
+    
+    <div class="sidebar-footer">
+      <a href="#" class="nav-item">
+        <i class="bi bi-gear"></i>
+        <span>Settings</span>
+      </a>
+      <a href="#" class="nav-item">
+        <i class="bi bi-lock"></i>
+        <span>Subscription</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    
+    <!-- Top Bar -->
+    <header class="top-bar">
+      <h1 class="page-title">Overview</h1>
+      
+      <div class="top-bar-actions">
+        <button class="btn btn-link text-secondary" data-bs-toggle="modal" data-bs-target="#searchModal">
+          <i class="bi bi-search"></i>
+        </button>
+        <button class="btn btn-link text-secondary position-relative" data-bs-toggle="modal" data-bs-target="#notificationsModal">
+          <i class="bi bi-bell"></i>
+          <span class="notification-badge"></span>
+        </button>
+        <div class="user-profile" data-bs-toggle="dropdown">
+          <span class="user-name d-none d-md-inline">Jones Ferdinand</span>
+          <img src="https://i.pravatar.cc/150?img=12" alt="User Avatar" class="user-avatar">
+        </div>
+      </div>
+    </header>
+
+    <!-- Stats Cards -->
+    <div class="row g-3 mb-4">
+      <div class="col-12 col-sm-6 col-lg-3">
+        <div class="stat-card">
+          <div class="stat-label">Unresolved</div>
+          <div class="stat-value">60</div>
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 col-lg-3">
+        <div class="stat-card stat-card-active">
+          <div class="stat-label text-primary">Overdue</div>
+          <div class="stat-value text-primary">16</div>
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 col-lg-3">
+        <div class="stat-card">
+          <div class="stat-label">Open</div>
+          <div class="stat-value">43</div>
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 col-lg-3">
+        <div class="stat-card">
+          <div class="stat-label">On hold</div>
+          <div class="stat-value">64</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Trends Section -->
+    <div class="row g-3 mb-4">
+      <div class="col-12 col-xl-8">
+        <div class="card">
+          <div class="card-body">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <div>
+                <h5 class="card-title mb-1">Today's trends</h5>
+                <p class="text-muted small mb-0">as of 25 May 2019, 09:41 PM</p>
+              </div>
+              <div class="legend">
+                <span class="legend-item"><span class="legend-color bg-primary"></span> Today</span>
+                <span class="legend-item"><span class="legend-color bg-secondary"></span> Yesterday</span>
+              </div>
+            </div>
+            <div class="chart-container">
+              <canvas id="trendsChart"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-12 col-xl-4">
+        <div class="card h-100">
+          <div class="card-body">
+            <div class="stats-list">
+              <div class="stats-item">
+                <span class="stats-label">Resolved</span>
+                <span class="stats-number">449</span>
+              </div>
+              <div class="stats-item">
+                <span class="stats-label">Received</span>
+                <span class="stats-number">426</span>
+              </div>
+              <div class="stats-item">
+                <span class="stats-label">Average first response time</span>
+                <span class="stats-number">33m</span>
+              </div>
+              <div class="stats-item">
+                <span class="stats-label">Average response time</span>
+                <span class="stats-number">3h 8m</span>
+              </div>
+              <div class="stats-item">
+                <span class="stats-label">Resolution within SLA</span>
+                <span class="stats-number">94%</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Section -->
+    <div class="row g-3">
+      <div class="col-12 col-lg-6">
+        <div class="card">
+          <div class="card-body">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <div>
+                <h5 class="card-title mb-1">Unresolved tickets</h5>
+                <p class="text-muted small mb-0">Group: <span class="fw-semibold">Support</span></p>
+              </div>
+              <a href="#" class="text-primary text-decoration-none small">View details</a>
+            </div>
+            
+            <div class="ticket-list">
+              <div class="ticket-item">
+                <div class="ticket-info">
+                  <div class="ticket-title">Waiting on Feature Request</div>
+                </div>
+                <div class="ticket-number">4238</div>
+              </div>
+              <div class="ticket-item">
+                <div class="ticket-info">
+                  <div class="ticket-title">Awaiting Customer Response</div>
+                </div>
+                <div class="ticket-number">1005</div>
+              </div>
+              <div class="ticket-item">
+                <div class="ticket-info">
+                  <div class="ticket-title">Awaiting Developer Fix</div>
+                </div>
+                <div class="ticket-number">914</div>
+              </div>
+              <div class="ticket-item">
+                <div class="ticket-info">
+                  <div class="ticket-title">Pending</div>
+                </div>
+                <div class="ticket-number">281</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-12 col-lg-6">
+        <div class="card">
+          <div class="card-body">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <div>
+                <h5 class="card-title mb-1">Tasks</h5>
+                <p class="text-muted small mb-0">Today</p>
+              </div>
+              <a href="#" class="text-primary text-decoration-none small">View all</a>
+            </div>
+            
+            <form class="task-form mb-3" data-bs-toggle="modal" data-bs-target="#addTaskModal">
+              <input type="text" class="form-control" placeholder="Create new task" readonly>
+              <button class="btn btn-link text-secondary">
+                <i class="bi bi-plus-lg"></i>
+              </button>
+            </form>
+            
+            <div class="task-list">
+              <div class="task-item">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="task1">
+                  <label class="form-check-label" for="task1">
+                    Finish ticket update
+                  </label>
+                </div>
+                <span class="badge bg-warning">URGENT</span>
+              </div>
+              <div class="task-item">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="task2">
+                  <label class="form-check-label" for="task2">
+                    Create new ticket example
+                  </label>
+                </div>
+                <span class="badge bg-success">NEW</span>
+              </div>
+              <div class="task-item">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="task3" checked>
+                  <label class="form-check-label" for="task3">
+                    Update ticket report
+                  </label>
+                </div>
+                <span class="badge bg-secondary">DEFAULT</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Search Modal -->
+  <div class="modal fade" id="searchModal" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Search</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <input type="text" class="form-control" placeholder="Search tickets, tasks, users...">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Notifications Modal -->
+  <div class="modal fade" id="notificationsModal" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Notifications</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <div class="list-group">
+            <a href="#" class="list-group-item list-group-item-action">
+              <div class="d-flex w-100 justify-content-between">
+                <h6 class="mb-1">New ticket assigned</h6>
+                <small>3 mins ago</small>
+              </div>
+              <p class="mb-1 small">Ticket #4238 has been assigned to you.</p>
+            </a>
+            <a href="#" class="list-group-item list-group-item-action">
+              <div class="d-flex w-100 justify-content-between">
+                <h6 class="mb-1">Customer response received</h6>
+                <small>25 mins ago</small>
+              </div>
+              <p class="mb-1 small">Ticket #1005 has a new response.</p>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Add Task Modal -->
+  <div class="modal fade" id="addTaskModal" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Create New Task</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="mb-3">
+              <label for="taskName" class="form-label">Task Name</label>
+              <input type="text" class="form-control" id="taskName" required>
+            </div>
+            <div class="mb-3">
+              <label for="taskPriority" class="form-label">Priority</label>
+              <select class="form-select" id="taskPriority">
+                <option value="urgent">Urgent</option>
+                <option value="new">New</option>
+                <option value="default" selected>Default</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="taskDescription" class="form-label">Description</label>
+              <textarea class="form-control" id="taskDescription" rows="3"></textarea>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+          <button type="button" class="btn btn-primary">Create Task</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <!-- Chart.js for the trend chart -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  
+  <!-- Custom JS -->
+  <script src="js/scripts.js"></script>
+  
+</body>
+</html>
